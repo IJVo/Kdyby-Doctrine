@@ -1,5 +1,5 @@
 {
-  "name": "kdyby/doctrine",
+  "name": "ijvo/kdyby-doctrine",
   "type": "library",
   "description": "Doctrine integration into Nette Framework",
   "keywords": ["nette", "kdyby", "doctrine", "orm", "dbal"],
