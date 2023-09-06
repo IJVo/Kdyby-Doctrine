@@ -1,3 +1,9 @@
+!.gitignore
+!.htaccess
+!web.config
+
 vendor
 tests/mysql.local.neon
 composer.lock
+tests/temp/*
+tests/tmp/*

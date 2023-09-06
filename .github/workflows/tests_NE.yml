@@ -1,0 +1,51 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  tests_1:
+    name: PHP ${{ matrix.php }} tests MySql RUNLEVEL 0
+    runs-on: ubuntu-latest
+
+    env:
+      DB: "mysql"
+   
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: tests
+        ports:
+          - 3306:3306
+
+    strategy:
+      matrix:
+        php: ['7.4']
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - run: composer selfupdate --no-progress
+      - run: composer update --no-progress --prefer-dist -W
+      - run: mkdir tests/_temp
+      - run: mkdir -p coverage/
+
+      - run: vendor/bin/code-checker --no-progress -d App
+      - run: vendor/bin/code-checker --no-progress -d tests/App
+      - run: vendor/bin/parallel-lint -e php,phpt -j 8 --exclude tests/_temp App tests
+
+      - run: vendor/bin/tester -s -c ./tests/php.ini-unix ./tests/KdybyTests/
+
+      - if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: tests/**/output
+
+

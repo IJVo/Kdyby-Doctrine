@@ -1,0 +1,18 @@
+@ECHO OFF
+
+    SET PHPVER=7_4_33
+REM SET PHPVER=8_0_26
+REM SET PHPVER=8_0_29
+REM SET PHPVER=8_1_13
+REM SET PHPVER=8_1_21
+REM SET PHPVER=8_2_0
+REM SET PHPVER=8_2_8
+
+IF %PHPVER%.==7_4_33. SET PATH=C:\Wamp\bin\php\php7.4.33;%PATH%
+IF %PHPVER%.==8_0_26. SET PATH=C:\Wamp\bin\php\php8.0.26;%PATH%
+IF %PHPVER%.==8_0_29. SET PATH=C:\Wamp\bin\php\php8.0.29;%PATH%
+IF %PHPVER%.==8_1_13. SET PATH=C:\Wamp\bin\php\php8.1.13;%PATH%
+IF %PHPVER%.==8_1_21. SET PATH=C:\Wamp\bin\php\php8.1.21;%PATH%
+IF %PHPVER%.==8_2_0.  SET PATH=C:\Wamp\bin\php\php8.2.0;%PATH%
+IF %PHPVER%.==8_2_8.  SET PATH=C:\Wamp\bin\php\php8.2.8;%PATH%
+

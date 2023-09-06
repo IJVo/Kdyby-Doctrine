@@ -1,0 +1,10 @@
+@ECHO OFF
+
+SET OPATH=%PATH%
+
+CALL set_phpver.bat
+
+PHP.EXE %*
+
+PATH=%OPATH%
+SET OPATH=

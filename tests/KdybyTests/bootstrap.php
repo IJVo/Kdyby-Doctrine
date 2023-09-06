@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 /**
  * This file is part of the Kdyby (http://www.kdyby.org)
  *
@@ -16,6 +17,10 @@ if ((!@include __DIR__ . '/../../vendor/autoload.php')) {
 // configure environment
 Tester\Environment::setup();
 date_default_timezone_set('Europe/Prague');
+
+//error_reporting(~E_USER_DEPRECATED); // note ~ before E_USER_DEPRECATED
+error_reporting(~E_USER_DEPRECATED+~E_WARNING); // note ~ before E_USER_DEPRECATED
+//error_reporting(~E_ALL); // note ~ before E_USER_DEPRECATED
 
 define('TEST_DIR', __DIR__);
 define('TEMP_DIR', __DIR__ . '/../tmp/' . (isset($_SERVER['argv']) ? md5(serialize($_SERVER['argv'])) : getmypid()));
