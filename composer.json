@@ -18,9 +18,9 @@
 		"doctrine/dbal": "~2.10",
 		"doctrine/common": "^2.13",
 		"kdyby/console": "^2.8",
-		"ijvo/kdyby-annotations": "^3.0",
-		"ijvo/kdyby-doctrine-cache": "^3.0",
-		"ijvo/kdyby-strict-objects": "^2.0",
+		"ijvo/kdyby-annotations": "dev-master",
+		"ijvo/kdyby-doctrine-cache": "dev-master",
+		"ijvo/kdyby-strict-objects": "dev-master",
 		"nette/di": "^3.1",
 		"nette/utils": "^3.2",
 		"nette/finder": "^2.5"
