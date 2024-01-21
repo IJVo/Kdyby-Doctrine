@@ -16,7 +16,7 @@
 		"psr/cache": "^1.0.1",
 		"doctrine/orm": "^2.7.1",
 		"doctrine/dbal": "~2.10",
-		"doctrine/common": "^2.13",
+		"doctrine/common": "^3.0.3",
 		"kdyby/console": "^2.8",
 		"ijvo/kdyby-annotations": "dev-master",
 		"ijvo/kdyby-doctrine-cache": "dev-master",
